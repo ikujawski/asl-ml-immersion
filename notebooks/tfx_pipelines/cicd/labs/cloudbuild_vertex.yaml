@@ -23,7 +23,7 @@ steps:
 
 # Build the image that encapsulates the TFX pipeline.
 - name: 'gcr.io/cloud-builders/docker'
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/tfxcovertype', '.']
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/tfxcovertypekku', '.']
   dir: pipeline_vertex
 
 # Compile the TFX pipeline
@@ -36,8 +36,8 @@ steps:
 
 # Run the TFX pipeline
 - name: 'gcr.io/$PROJECT_ID/tfx-cli_vertex'
-  args: ['-c', 'python /tfx/src/tfx_pipeline_run.py tfxcovertype.json tfxcovertype $PROJECT_ID $_REGION']
+  args: ['-c', 'python /tfx/src/tfx_pipeline_run.py tfxcovertype.json tfxcovertypekku $PROJECT_ID $_REGION']
   dir: pipeline_vertex
 
 # Push the custom image to Container Registry
-images: ['gcr.io/$PROJECT_ID/tfxcovertype']
+images: ['gcr.io/$PROJECT_ID/tfxcovertypekku']

@@ -27,7 +27,7 @@ def run_vertex_pipeline(
         enable_caching=enable_caching,
     )
 
-    pipeline.run()
+    pipeline.run(service_account="qwiklabs-gcp-04-28475851fd68@qwiklabs-gcp-04-28475851fd68.iam.gserviceaccount.com")
 
 
 if __name__ == "__main__":
